@@ -1,0 +1,18 @@
+.moviecontainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.movie {
+    
+}
+.movieimage {
+    height: 35vh;
+    width: 20vw;
+    margin: 1rem;
+    
+}
+
+.title {
+    margin-bottom: 10vh;
+}
