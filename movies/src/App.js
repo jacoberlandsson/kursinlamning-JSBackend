@@ -20,7 +20,12 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>TMDB</h1>
+        <h1 className="page-title">TMDB</h1>
+        <input
+          className="searchmovie"
+          type="text"
+          placeholder="Search for a movie"
+        />
       </header>
       <h2>Popular right now</h2>
       <div className="moviecontainer">
