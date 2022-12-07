@@ -1,18 +1,23 @@
 .App {
   text-align: center;
-  background-color: black;
+  background-color:  rgb(52, 7, 52);
   color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
+  background-color: black;
   display: flex;
   flex-direction: row;
     justify-content: space-around;
     align-items: center;
-}
+    border-bottom: 2px solid rgb(255, 184, 6);
+    padding: 1%;
+  }
 
 .API-source {
   width: 20%;
+
 }
 
 .searchmovie {
@@ -23,6 +28,12 @@ header {
  background-color:  rgb(52, 7, 52);
  color: rgb(255, 184, 6);
 }
+
+.searchmovie:active {
+  outline: none;
+}
+
+
 
 
 .page-title {

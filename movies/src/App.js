@@ -5,6 +5,9 @@ import MoviePopular from "./components/MoviePopular";
 const movies_from_api =
   "https://api.themoviedb.org/3/movie/popular?api_key=1026eea38d091b7fb22916e8c7542406&language=en-US&page=1";
 
+const search_api =
+  "https://api.themoviedb.org/3/search/movie?api_key=1026eea38d091b7fb22916e8c7542406&query=";
+
 function App() {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -20,6 +23,13 @@ function App() {
 
   const handleSearch = (e) => {
     e.preventDefault();
+
+    fetch(search_api + searchTerm)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setMovies(data.results);
+      });
   };
 
   const handleChange = (e) => {
@@ -27,29 +37,30 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header>
-        <h1 className="page-title">TMDB</h1>
-        <img
-          className="API-source"
-          src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_2-9665a76b1ae401a510ec1e0ca40ddcb3b0cfe45f1d51b77a308fea0845885648.svg"
-        ></img>
-        <form onSubmit={handleSearch}>
-          <input
-            className="searchmovie"
-            type="text"
-            placeholder="Search for a movie"
-            value={searchTerm}
-            onChange={handleChange}
-          />
-        </form>
-      </header>
-      <h2>Popular right now</h2>
-      <div className="moviecontainer">
-        {movies.length > 0 &&
-          movies.map((movie) => <MoviePopular key={movie.id} {...movie} />)}
+    <>
+      <div className="App">
+        <header>
+          <img
+            className="API-source"
+            src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_2-9665a76b1ae401a510ec1e0ca40ddcb3b0cfe45f1d51b77a308fea0845885648.svg"
+          ></img>
+          <form onSubmit={handleSearch}>
+            <input
+              className="searchmovie"
+              type="text"
+              placeholder="Search for a movie"
+              value={searchTerm}
+              onChange={handleChange}
+            />
+          </form>
+        </header>
+        <h2>Popular right now</h2>
+        <div className="moviecontainer">
+          {movies.length > 0 &&
+            movies.map((movie) => <MoviePopular key={movie.id} {...movie} />)}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 export default App;
