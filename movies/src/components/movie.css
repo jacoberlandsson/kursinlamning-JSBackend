@@ -1,19 +1,22 @@
 .moviecontainer {
     display: flex;
-    flex-direction: row;
-    width: 100%;
+    flex-flow: row nowrap;
+    height: 40vh;
     background-color: black;
+    margin-bottom: 8%;
 }
-.movie {
-    
-}
+
 .movieimage {
     height: 35vh;
     width: 20vw;
     margin: 1rem;
+    margin-bottom: 0;
     
 }
 
 .title {
     margin-bottom: 10vh;
+    height: 8vh;
+    background-color: black;
+    margin-top: 0;
 }

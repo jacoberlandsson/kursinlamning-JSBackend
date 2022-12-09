@@ -42,3 +42,19 @@ header {
   background-color: rgb(52, 7, 52);
   color: rgb(255, 184, 6);
 }
+
+
+.scroll {
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+align-items: center;
+}
+
+.scroll-button-left {
+
+}
+
+.scroll-button-right {
+
+}
