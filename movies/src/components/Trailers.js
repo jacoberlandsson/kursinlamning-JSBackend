@@ -22,6 +22,7 @@ function Trailers({ title }) {
           title={title}
         </iframe>
       </div>
+      ;
     </>
   );
 }

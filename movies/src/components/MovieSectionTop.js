@@ -4,7 +4,7 @@ import "./movie.css";
 
 const movieImages = "https://www.themoviedb.org/t/p/w440_and_h660_face";
 
-function MovieSection({
+function MovieSectionTop({
   title,
   poster_path,
   overview,
@@ -28,4 +28,4 @@ function MovieSection({
   );
 }
 
-export default MovieSection;
+export default MovieSectionTop;

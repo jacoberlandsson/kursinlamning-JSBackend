@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import MovieSearch from "./MovieSearch";
 
 const search_api =
   "https://api.themoviedb.org/3/search/movie?api_key=1026eea38d091b7fb22916e8c7542406&query=";
 
 function Navbar() {
-  const [movies, setMovies] = useState([]);
+  const [searchmovie, setSearchMovie] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (e) => {
@@ -14,7 +15,7 @@ function Navbar() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        setMovies(data.results);
+        setSearchMovie(data.results);
       });
   };
 
@@ -39,6 +40,10 @@ function Navbar() {
           />
         </form>
       </header>
+      <div className="moviecontainer">
+        {searchmovie.length > 0 &&
+          searchmovie.map((movie) => <MovieSearch key={movie.id} {...movie} />)}
+      </div>
     </div>
   );
 }
