@@ -9,7 +9,6 @@ function Home() {
     <>
       <div className="App">
         <Navbar />
-        <Trailers />
         <MovieList />
       </div>
     </>

@@ -46,7 +46,7 @@ function Navbar() {
           <button>Search</button>
         </form>
       </header>
-      <div className="moviecontainer">
+      <div className="moviecontainersearch">
         {searchTerm.length > 0 &&
           searchmovie.map((movie) => <MovieSearch key={movie.id} {...movie} />)}
       </div>

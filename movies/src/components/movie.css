@@ -31,3 +31,13 @@
     background-color: black;
     margin-top: 0;
 }
+
+
+
+.moviecontainersearch {
+    display: flex;
+    flex-flow: row wrap;
+    height: auto;
+    background-color: black;
+    margin-bottom: 8%;
+}
