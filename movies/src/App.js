@@ -5,6 +5,8 @@ import Trailers from "./components/Trailers";
 import MovieClicked from "./pages/MovieClicked";
 import MovieLoader from "./pages/MovieLoader";
 import Movie from "./components/Movie";
+import MovieSearch from "./components/MovieSearch";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
@@ -13,11 +15,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
-            path="movie/:id"
+            path="moviesearch"
             element={
-              <MovieClicked>
-                <Movie />
-              </MovieClicked>
+              <Navbar>
+                {" "}
+                <MovieSearch />{" "}
+              </Navbar>
             }
           />
           <Route path="/*" element={<h1> Error </h1>}></Route>

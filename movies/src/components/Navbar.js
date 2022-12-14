@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import MovieSearch from "./MovieSearch";
 
 const search_api =
@@ -8,14 +8,17 @@ function Navbar() {
   const [searchmovie, setSearchMovie] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
+  const search = useRef();
+
   const handleSearch = (e) => {
     e.preventDefault();
 
     fetch(search_api + searchTerm)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        setSearchMovie(data.results);
+        if (searchTerm) {
+          setSearchMovie(data.results);
+        }
       });
   };
 
@@ -33,15 +36,18 @@ function Navbar() {
         <form onSubmit={handleSearch}>
           <input
             className="searchmovie"
-            type="text"
+            type="search"
             placeholder="Search for a movie"
+            minLength="1"
             value={searchTerm}
             onChange={handleChange}
+            ref={search}
           />
+          <button>Search</button>
         </form>
       </header>
       <div className="moviecontainer">
-        {searchmovie.length > 0 &&
+        {searchTerm.length > 0 &&
           searchmovie.map((movie) => <MovieSearch key={movie.id} {...movie} />)}
       </div>
     </div>
