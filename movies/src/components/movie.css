@@ -1,7 +1,7 @@
 .moviecontainer {
     display: flex;
     flex-flow: row nowrap;
-    height: 40vh;
+    height: 50vh;
     background-color: black;
     margin-bottom: 8%;
     overflow-x: auto;

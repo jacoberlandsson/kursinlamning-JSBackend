@@ -6,24 +6,24 @@ const search_api =
 
 function Navbar() {
   const [searchmovie, setSearchMovie] = useState([]);
-  const [searchTitle, setSearchTitle] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const search = useRef();
 
   const handleSearch = (e) => {
     e.preventDefault();
 
-    fetch(search_api + searchTitle)
+    fetch(search_api + searchTerm)
       .then((response) => response.json())
       .then((data) => {
-        if (searchTitle) {
-          setSearchTitle(data.results);
+        if (searchTerm) {
+          setSearchMovie(data.results);
         }
       });
   };
 
   const handleChange = (e) => {
-    setSearchTitle(e.target.value);
+    setSearchTerm(e.target.value);
   };
 
   return (
@@ -39,7 +39,7 @@ function Navbar() {
             type="search"
             placeholder="Search for a movie"
             minLength="1"
-            value={searchTitle}
+            value={searchTerm}
             onChange={handleChange}
             ref={search}
           />
@@ -47,7 +47,7 @@ function Navbar() {
         </form>
       </header>
       <div className="moviecontainer">
-        {searchTitle.length > 0 &&
+        {searchTerm.length > 0 &&
           searchmovie.map((movie) => <MovieSearch key={movie.id} {...movie} />)}
       </div>
     </div>
