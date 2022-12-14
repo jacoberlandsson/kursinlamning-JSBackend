@@ -4,7 +4,17 @@
     height: 40vh;
     background-color: black;
     margin-bottom: 8%;
+    overflow-x: auto;
 }
+
+.moviecontainer::-webkit-scrollbar {
+    width: 10px;
+}
+
+.movie::-webkit-scrollbar {
+    width: 10px;
+}
+
 
 .movieimage {
     height: 35vh;

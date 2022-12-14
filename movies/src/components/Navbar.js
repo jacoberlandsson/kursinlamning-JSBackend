@@ -39,7 +39,7 @@ function Navbar() {
             type="search"
             placeholder="Search for a movie"
             minLength="1"
-            value={searchTerm}
+            value={searchTitle}
             onChange={handleChange}
             ref={search}
           />

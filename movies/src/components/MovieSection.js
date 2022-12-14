@@ -14,15 +14,13 @@ function MovieSection({
 }) {
   return (
     <>
-      <div>
-        <div className="movie">
-          <img
-            className="movieimage"
-            src={movieImages + poster_path}
-            alt={title}
-          />
-          <h3 className="title">{title + " " + vote_average}</h3>
-        </div>
+      <div className="movie">
+        <img
+          className="movieimage"
+          src={movieImages + poster_path}
+          alt={title}
+        />
+        <h3 className="title">{title + " " + vote_average}</h3>
       </div>
     </>
   );

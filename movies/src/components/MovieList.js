@@ -35,20 +35,10 @@ function MovieList() {
     <>
       <div>
         <h2>Popular</h2>
-        <div className="scroll">
-          <button
-            className="scroll-button-left"
-            onClick="scrollHorizontally(1)"
-          >
-            <i className="fa-solid fa-chevron-left"></i>
-          </button>
-          <div className="moviecontainer">
-            {movies.length > 0 &&
-              movies.map((movie) => <MovieSection key={movie.id} {...movie} />)}
-          </div>
-          <button className="scroll-button-right">
-            <i className="fa-solid fa-chevron-right"></i>
-          </button>
+
+        <div className="moviecontainer">
+          {movies.length > 0 &&
+            movies.map((movie) => <MovieSection key={movie.id} {...movie} />)}
         </div>
       </div>
 
