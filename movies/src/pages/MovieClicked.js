@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Movie from "../components/Movie";
+import "./movieclicked.css";
 
 const movies_click =
   "https://api.themoviedb.org/3/movie/popular?api_key=1026eea38d091b7fb22916e8c7542406&language=en-US&page=1";
@@ -8,17 +8,6 @@ const movies_click =
 function MovieClicked({ title }) {
   const [movieInfo, setMovieInfo] = useState({});
   const params = useParams();
-
-  /*
-  useEffect(() => {
-    fetch(movies_click)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setMovieInfo(data.results);
-      });
-  }, []);
-*/
 
   useEffect(() => {
     const getMovie = async () => {
@@ -43,7 +32,10 @@ function MovieClicked({ title }) {
           }
           alt={title}
         />
+        <h3>Storyline</h3>
         <p>{movieInfo.overview}</p>
+        <p>Release date: {movieInfo.release_date}</p>
+        <p>Popularity: {movieInfo.popularity}</p>
       </div>
     </>
   );
