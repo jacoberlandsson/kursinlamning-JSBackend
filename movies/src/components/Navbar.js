@@ -45,7 +45,7 @@ function Navbar() {
             ref={search}
           />
           <button>
-            <Link to={`/search`}></Link>Search
+            <Link to={`/search`}></Link>
           </button>
         </form>
       </header>
