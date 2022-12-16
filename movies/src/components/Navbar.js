@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import MovieSearch from "./MovieSearch";
+import { Link } from "react-router-dom";
 
 const search_api =
   "https://api.themoviedb.org/3/search/movie?api_key=1026eea38d091b7fb22916e8c7542406&query=";
@@ -43,7 +44,9 @@ function Navbar() {
             onChange={handleChange}
             ref={search}
           />
-          <button>Search</button>
+          <button>
+            <Link to={`/search`}></Link>Search
+          </button>
         </form>
       </header>
       <div className="moviecontainersearch">

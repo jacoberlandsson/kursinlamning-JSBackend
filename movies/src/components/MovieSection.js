@@ -11,6 +11,7 @@ function MovieSection({
   vote_average,
   video,
   id,
+  movie,
 }) {
   return (
     <>
@@ -20,7 +21,9 @@ function MovieSection({
           src={movieImages + poster_path}
           alt={title}
         />
-        <h3 className="title">{title + " " + vote_average}</h3>
+        <Link to={`title/${id}`} className="title">
+          {title + " " + vote_average}{" "}
+        </Link>
       </div>
     </>
   );

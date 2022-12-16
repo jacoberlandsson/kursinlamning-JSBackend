@@ -19,7 +19,11 @@ function MovieClicked({ title, backdrop_path }) {
       .then((data) => setMovie(data));
   };
 
-  return <Movie />;
+  return (
+    <div className="moviecontainer">
+      <Movie />
+    </div>
+  );
 }
 
 export default MovieClicked;
