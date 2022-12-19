@@ -49,3 +49,16 @@
     background-color: black;
     margin-bottom: 8%;
 }
+
+.moviesearch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbutton {
+    padding: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
