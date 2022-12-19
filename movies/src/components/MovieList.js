@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import MovieSection from "./MovieSection";
 import Recent from "./Recent";
 
