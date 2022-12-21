@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import MovieClicked from "./MovieClicked";
 
 function Home() {
+  /*
   const [recently, setRecently] = useState([]);
 
   useEffect(() => {
@@ -27,12 +28,13 @@ function Home() {
     saveToLocalStorage(newRecently);
     console.log("hellooo");
   };
+  */
 
   return (
     <>
       <div className="App">
         <Navbar />
-        <MovieList addRecentMovie={addRecentMovie} />
+        <MovieList /*addRecentMovie={addRecentMovie} */ />
       </div>
     </>
   );

@@ -8,7 +8,7 @@ const movies_popular =
 const movies_top =
   "https://api.themoviedb.org/3/movie/top_rated?api_key=1026eea38d091b7fb22916e8c7542406&language=en-US&page=1";
 
-function MovieList() {
+function MovieList(recently, setRecently) {
   const [movies, setMovies] = useState([]);
   const [moviestop, setMoviesTop] = useState([]);
   const [recentlyViewed, setRecentlyViewed] = useState([]);
@@ -54,9 +54,9 @@ function MovieList() {
       <div>
         <h2>Recently Viewed Movies</h2>
         <div className="moviecontainer">
-          {localStorage.length > 0 &&
-            movies.map((movie) => (
-              <Recent key={movie.id} {...movie} movies={movies} />
+          {recently.length > 0 &&
+            recently.map((movie) => (
+              <Recent key={movie.id} {...movie} {...movie} />
             ))}
         </div>
       </div>

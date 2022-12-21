@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./movieclicked.css";
 import { Link } from "react-router-dom";
+import Recent from "../components/Recent";
 
-function MovieClicked({}) {
+function MovieClicked({ recently, setRecently }) {
   const [movieInfo, setMovieInfo] = useState({});
   const params = useParams();
-  const [recently, setRecently] = useState([]);
 
   useEffect(() => {
     const getMovie = async () => {
@@ -14,30 +14,34 @@ function MovieClicked({}) {
         `https://api.themoviedb.org/3/movie/${params.id}popular?api_key=1026eea38d091b7fb22916e8c7542406&language=en-US&page=1`
       );
       const data = await result.json();
-      console.log(data);
       setMovieInfo(data);
-      localStorage.setItem("recentlyviewed", JSON.stringify(data));
+      addRecentMovie(data);
+      console.log(recently);
+      /*localStorage.setItem("recentlyviewed", JSON.stringify(data));*/
     };
     getMovie();
   }, []);
 
   useEffect(() => {
-    const recentlyviewed = JSON.parse(localStorage.getItem("recentlyviewed"));
+    const test = [];
+    const recentlyviewed = [JSON.parse(localStorage.getItem("recentlyviewed"))];
 
     if (recentlyviewed) {
       setRecently(recentlyviewed);
     }
   }, []);
 
-  const saveToLocalStorage = (items) => {
-    localStorage.setItem("recentlyviewed", JSON.stringify(items));
+  const saveToLocalStorage = (data) => {
+    localStorage.setItem("recentlyviewed", JSON.stringify(data));
   };
 
   const addRecentMovie = (movie) => {
-    const newRecently = [...recently, movie];
-    setRecently(newRecently);
-    saveToLocalStorage(newRecently);
-    console.log("hellooo");
+    // const newRecently = [movie, ...recently];
+    const existingMovie = recently.find((recent) => recent.id === movie.id);
+    if (existingMovie) return;
+
+    setRecently([movie, ...recently].slice(0, 5));
+    // saveToLocalStorage(newRecently);
   };
 
   return (
@@ -45,7 +49,7 @@ function MovieClicked({}) {
       <Link to={"/"} className="title">
         Back to Movies
       </Link>
-      <div className="movieclicked">
+      <div className="movieclicked" onClick={() => addRecentMovie()}>
         <h2>{movieInfo.title}</h2>
         <img
           className="movieimageclicked"
@@ -59,6 +63,13 @@ function MovieClicked({}) {
         <p>{movieInfo.overview}</p>
         <p>Release date: {movieInfo.release_date}</p>
         <p>Popularity: {movieInfo.popularity}</p>
+      </div>
+
+      <div>
+        <div className="moviecontainer">
+          {recently.length > 0 &&
+            recently.map((movie) => <Recent key={movie.id} {...movie} />)}
+        </div>
       </div>
     </>
   );
