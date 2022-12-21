@@ -66,7 +66,8 @@ function MovieClicked({ recently, setRecently }) {
       </div>
 
       <div>
-        <div className="moviecontainer">
+        <h2 className="recent-heading">Recently Viewed</h2>
+        <div className="recent-container">
           {recently.length > 0 &&
             recently.map((movie) => <Recent key={movie.id} {...movie} />)}
         </div>

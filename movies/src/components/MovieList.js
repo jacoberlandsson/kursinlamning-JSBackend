@@ -50,16 +50,6 @@ function MovieList(recently, setRecently) {
             ))}
         </div>
       </div>
-
-      <div>
-        <h2>Recently Viewed Movies</h2>
-        <div className="moviecontainer">
-          {recently.length > 0 &&
-            recently.map((movie) => (
-              <Recent key={movie.id} {...movie} {...movie} />
-            ))}
-        </div>
-      </div>
     </>
   );
 }
