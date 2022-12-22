@@ -4,23 +4,17 @@ import "./movie.css";
 
 const movieImages = "https://www.themoviedb.org/t/p/w440_and_h660_face";
 
-function MovieSection({ title, poster_path, vote_average, id, props, movie }) {
-  const [recently, setRecently] = useState([]);
-
+function MovieSection({ title, poster_path, vote_average, id }) {
   return (
     <>
       <div className="movie">
-        <Link
-          /* onClick={() => addRecentMovie(movie)}*/
-          to={`title/${id}`}
-          className="title"
-        >
+        <Link to={`title/${id}`} className="title">
           <img
             className="movieimage"
             src={movieImages + poster_path}
             alt={title}
           />
-          {title + " " + vote_average}{" "}
+          <h3>{title + " " + vote_average}</h3>{" "}
         </Link>
       </div>
     </>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import MovieSection from "./MovieSection";
-import Recent from "./Recent";
 
 const movies_popular =
   "https://api.themoviedb.org/3/movie/popular?api_key=1026eea38d091b7fb22916e8c7542406&language=en-US&page=1";
@@ -11,13 +10,11 @@ const movies_top =
 function MovieList(recently, setRecently) {
   const [movies, setMovies] = useState([]);
   const [moviestop, setMoviesTop] = useState([]);
-  const [recentlyViewed, setRecentlyViewed] = useState([]);
 
   useEffect(() => {
     fetch(movies_popular)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setMovies(data.results);
       });
   }, []);
@@ -26,7 +23,6 @@ function MovieList(recently, setRecently) {
     fetch(movies_top)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setMoviesTop(data.results);
       });
   }, []);

@@ -16,8 +16,6 @@ function MovieClicked({ recently, setRecently }) {
       const data = await result.json();
       setMovieInfo(data);
       addRecentMovie(data);
-      console.log(recently);
-      /*localStorage.setItem("recentlyviewed", JSON.stringify(data));*/
     };
     getMovie();
   }, []);

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import MovieSearch from "./MovieSearch";
 import { Link } from "react-router-dom";
 
