@@ -12,6 +12,10 @@ function Home() {
       <div className="App">
         <Navbar />
         <MovieList />
+        <footer>
+          This product uses the TMDB API but is not endorsed or certified by
+          TMDB.
+        </footer>
       </div>
     </>
   );
