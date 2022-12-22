@@ -22,6 +22,7 @@
 
 .clicked-title {
     text-align: center;
+    color: gold;
 }
 
 .redirect {
@@ -40,6 +41,7 @@
     display: flex;
     margin-bottom: 5%;
     border-radius: 15%;
+    color: goldenrod;
    
 }
 
@@ -48,3 +50,4 @@
     flex-direction: column;
     margin-left: 5%;
 }
+

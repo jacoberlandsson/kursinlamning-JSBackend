@@ -30,7 +30,7 @@ function MovieClicked({ recently, setRecently }) {
   return (
     <>
       <div className="movieclicked">
-        <h2>{movieInfo.title}</h2>
+        <h2 className="clicked-title">{movieInfo.title}</h2>
         <Link to={"/"} className="title">
           <button type="button" className="redirect">
             Back to Movies
