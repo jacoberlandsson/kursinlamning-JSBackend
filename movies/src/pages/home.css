@@ -4,18 +4,18 @@ html {
 
 .App {
   text-align: center;
-  background: linear-gradient(-45deg, rgb(0, 13, 255), black, black, rgb(0, 13, 255));
-  color: gold;
+  background-color: rgba(27, 25, 25, 0.323);
+  color: white;
   font-family: garamond;
 }
 
 header {
-  background-color: black;
+  background-color: rgba(27, 25, 25, 0.323);
   display: flex;
   flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    border-bottom: 2px solid rgb(255, 184, 6);
+    border-bottom: 2px solid silver;
     padding: 1%;
   }
 
@@ -48,7 +48,7 @@ align-items: center;
 
 footer {
   background-color: black;
-  color:gold;
+  color:rgb(183, 137, 21);
   height: 10vh;
   display: flex;
   align-items: center;
