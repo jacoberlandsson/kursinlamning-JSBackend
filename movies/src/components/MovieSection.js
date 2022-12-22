@@ -10,16 +10,16 @@ function MovieSection({ title, poster_path, vote_average, id, props, movie }) {
   return (
     <>
       <div className="movie">
-        <img
-          className="movieimage"
-          src={movieImages + poster_path}
-          alt={title}
-        />
         <Link
           /* onClick={() => addRecentMovie(movie)}*/
           to={`title/${id}`}
           className="title"
         >
+          <img
+            className="movieimage"
+            src={movieImages + poster_path}
+            alt={title}
+          />
           {title + " " + vote_average}{" "}
         </Link>
       </div>

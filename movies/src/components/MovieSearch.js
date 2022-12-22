@@ -14,15 +14,18 @@ function MovieSearch({
 }) {
   return (
     <>
-      <div>
-        <div className="moviesearch">
-          <img
-            className="movieimage"
-            src={movieImages + poster_path}
-            alt={title}
-          />
-          <Link to={`title/${id}`} className="title">
-            {title + " " + vote_average}{" "}
+      <div className="moviecontainersearch">
+        <div className="movie">
+          <Link
+            /* onClick={() => addRecentMovie(movie)}*/
+            to={`title/${id}`}
+            className="title"
+          >
+            <img
+              className="movieimage"
+              src={movieImages + poster_path}
+              alt={title}
+            />
           </Link>
         </div>
       </div>

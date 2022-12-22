@@ -22,47 +22,38 @@ function MovieClicked({ recently, setRecently }) {
     getMovie();
   }, []);
 
-  useEffect(() => {
-    const test = [];
-    const recentlyviewed = [JSON.parse(localStorage.getItem("recentlyviewed"))];
-
-    if (recentlyviewed) {
-      setRecently(recentlyviewed);
-    }
-  }, []);
-
-  const saveToLocalStorage = (data) => {
-    localStorage.setItem("recentlyviewed", JSON.stringify(data));
-  };
-
   const addRecentMovie = (movie) => {
-    // const newRecently = [movie, ...recently];
     const existingMovie = recently.find((recent) => recent.id === movie.id);
     if (existingMovie) return;
 
     setRecently([movie, ...recently].slice(0, 5));
-    // saveToLocalStorage(newRecently);
   };
 
   return (
     <>
-      <Link to={"/"} className="title">
-        Back to Movies
-      </Link>
-      <div className="movieclicked" onClick={() => addRecentMovie()}>
+      <div className="movieclicked">
         <h2>{movieInfo.title}</h2>
-        <img
-          className="movieimageclicked"
-          src={
-            "https://www.themoviedb.org/t/p/w440_and_h660_face" +
-            movieInfo.backdrop_path
-          }
-          alt={movieInfo.title}
-        />
-        <h3>Storyline</h3>
-        <p>{movieInfo.overview}</p>
-        <p>Release date: {movieInfo.release_date}</p>
-        <p>Popularity: {movieInfo.popularity}</p>
+        <Link to={"/"} className="title">
+          <button type="button" className="redirect">
+            Back to Movies
+          </button>
+        </Link>
+
+        <div className="moviedescription">
+          <img
+            className="movieimageclicked"
+            src={
+              "https://www.themoviedb.org/t/p/w440_and_h660_face" +
+              movieInfo.backdrop_path
+            }
+            alt={movieInfo.title}
+          />
+          <div className="description">
+            <p>{movieInfo.overview}</p>
+            <p>Release date: {movieInfo.release_date}</p>
+            <p>Popularity: {movieInfo.popularity}</p>
+          </div>
+        </div>
       </div>
 
       <div>

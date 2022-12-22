@@ -3,7 +3,7 @@
     flex-flow: row nowrap;
     height: 50vh;
     background-color: black;
-    margin-bottom: 8%;
+    margin-bottom: 1%;
     justify-content: center;
     align-items: center;
 }
@@ -14,15 +14,20 @@
     display: flex;
     justify-content: space-around;
     margin: 1%;
+
 }
 
 .recentimg {
    height: 30vh;
+   margin: 0;
 }
 
 .recentmovie {
-    background-color: rgba(128, 128, 128, 0.573);
+    
     margin: 1%;
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
 
 }
 
@@ -32,11 +37,12 @@
 }
 
 .recent-title {
-    font-size: 0.5vw;
+    
     margin-top: 0;
     margin-bottom: 0;
     cursor: pointer;
     text-decoration: none;
     color: white;
     text-align: center;
+    padding: 0;
 }
