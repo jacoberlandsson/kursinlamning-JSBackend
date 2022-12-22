@@ -18,7 +18,8 @@
 
 .movieimageclicked {
     width: 75%;
-    height: 50vh;
+    height: 70vh;
+    width: 25vw;
     border-radius: 15%;
     margin-left: 5%;
     
@@ -27,6 +28,7 @@
 .clicked-title {
     text-align: center;
     color: white;
+    margin-bottom: 0;
 }
 
 .redirect {

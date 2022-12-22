@@ -8,7 +8,11 @@ function Recent({ title, poster_path }) {
     <>
       <div className="recentlist">
         <div>
-          <img className="movieimage" src={movieImages + poster_path} />
+          <img
+            className="movieimage"
+            alt={title}
+            src={movieImages + poster_path}
+          />
         </div>
       </div>
     </>
