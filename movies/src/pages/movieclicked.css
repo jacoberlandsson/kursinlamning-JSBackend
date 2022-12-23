@@ -5,8 +5,8 @@
     font-size: 1.3rem;
     flex-direction: column;
     align-items: center;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
     margin-top: 2%;
    border-radius: 15%;
    background-color: rgba(0, 0, 0, 0.505);
@@ -69,3 +69,9 @@
     margin-left: 5%;
 }
 
+@media only screen and (max-width: 402px) {
+
+    .movieimageclicked {
+        width: 300px;
+    }
+}
