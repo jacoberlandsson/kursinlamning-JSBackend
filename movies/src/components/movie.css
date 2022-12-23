@@ -1,0 +1,92 @@
+.moviecontainer {
+    display: flex;
+    flex-flow: row nowrap;
+    max-height: 500px;
+    background-color: black;
+    margin-bottom: 2%;
+    overflow-x: auto;
+   
+}
+
+
+
+.moviecontainer::-webkit-scrollbar {
+    width: 10px;
+}
+
+.movie::-webkit-scrollbar {
+    width: 10px;
+}
+
+.movie {
+margin: 1rem;
+
+
+}
+
+
+.movieimage {
+    height: 250px;
+  
+    margin-bottom: 0;
+    border: 2px solid rgb(183, 137, 21);
+    border-radius: 10%;
+    
+}
+
+.title {
+    
+    margin-bottom: 10vh;
+    height: 8vh;
+    margin-top: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.title:hover {
+    color: silver;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+
+}
+
+.card-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.votestar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.moviecontainersearch {
+    display: flex;
+    flex-flow: row wrap;
+    height: auto;
+    background-color: black;
+    justify-content: center;
+   
+}
+
+.moviesearch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.searchbutton {
+    padding: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+}

@@ -1,0 +1,57 @@
+html {
+  background-color: black;
+}
+
+.App {
+  text-align: center;
+  background-color: rgba(27, 25, 25, 0.323);
+  color: white;
+  font-family: garamond;
+}
+
+header {
+  background-color: rgba(27, 25, 25, 0.323);
+  display: flex;
+  flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid silver;
+    padding: 1%;
+    
+  }
+
+.API-source {
+  width: 20%;
+
+}
+
+.searchmovie {
+  border-radius: 20px;
+  font-size: 1rem;
+  padding: 0.7rem;
+  width: 100%;
+ background-color: black;
+ color: rgb(255, 184, 6);
+}
+
+.searchmovie:active {
+  outline: none;
+}
+
+
+
+.scroll {
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+align-items: center;
+}
+
+footer {
+  background-color: black;
+  color:rgb(183, 137, 21);
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

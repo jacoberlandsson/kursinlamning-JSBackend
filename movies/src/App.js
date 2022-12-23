@@ -1,22 +1,33 @@
-import React, { useEffect, useState } from "react";
-import "./App.css";
-import Movie from "./components/Movie";
-
-const movies_from_api =
-  "https://api.themoviedb.org/3/movie/top_rated?api_key=1026eea38d091b7fb22916e8c7542406&language=en-US&page=1";
+import React, { useState } from "react";
+import Home from "./pages/Home";
+import { Route, Routes } from "react-router-dom";
+import MovieClicked from "./pages/MovieClicked";
+import Navbar from "./components/Navbar";
+import Error from "./pages/Error";
+import Recent from "./components/Recent";
 
 function App() {
-  const [movies, setMovies] = useState([]);
+  const [recently, setRecently] = useState([]);
 
-  useEffect(() => {
-    fetch(movies_from_api)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setMovies(data.results);
-      });
-  }, []);
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Navbar />} />
+        <Route
+          path="/title/:id"
+          element={
+            <MovieClicked recently={recently} setRecently={setRecently} />
+          }
+        />
+        <Route
+          path="/title/:id"
+          element={<Recent recently={recently} setRecently={setRecently} />}
+        />
 
-  return <div>{movies.length > 0 && movies.map((movie) => <Movie />)}</div>;
+        <Route path="/*" element={<Error />} />
+      </Routes>
+    </>
+  );
 }
 export default App;
