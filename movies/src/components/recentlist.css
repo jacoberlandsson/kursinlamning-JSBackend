@@ -18,8 +18,11 @@
 }
 
 .recentimg {
-   height: 30vh;
+   max-height: 40vh;
+   width: 15vw;
    margin: 0;
+   border: 2px solid rgb(183, 137, 21);
+   border-radius: 10%;
 }
 
 .recentmovie {

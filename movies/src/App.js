@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import MovieClicked from "./pages/MovieClicked";
 import Navbar from "./components/Navbar";
 import Error from "./pages/Error";
+import Recent from "./components/Recent";
 
 function App() {
   const [recently, setRecently] = useState([]);
@@ -19,6 +20,11 @@ function App() {
             <MovieClicked recently={recently} setRecently={setRecently} />
           }
         />
+        <Route
+          path="/title/:id"
+          element={<Recent recently={recently} setRecently={setRecently} />}
+        />
+
         <Route path="/*" element={<Error />} />
       </Routes>
     </>

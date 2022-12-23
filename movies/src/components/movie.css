@@ -1,9 +1,9 @@
 .moviecontainer {
     display: flex;
     flex-flow: row nowrap;
-    height: 70vh;
+    max-height: 500px;
     background-color: black;
-    margin-bottom: 8%;
+    margin-bottom: 2%;
     overflow-x: auto;
    
 }
@@ -20,12 +20,14 @@
 
 .movie {
 margin: 1rem;
+
+
 }
 
 
 .movieimage {
-    height: 48vh;
-    width: 15vw;
+    height: 250px;
+  
     margin-bottom: 0;
     border: 2px solid rgb(183, 137, 21);
     border-radius: 10%;
@@ -33,6 +35,7 @@ margin: 1rem;
 }
 
 .title {
+    
     margin-bottom: 10vh;
     height: 8vh;
     margin-top: 0;
@@ -49,6 +52,20 @@ margin: 1rem;
 .info {
     display: flex;
     justify-content: center;
+
+}
+
+.card-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.votestar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .moviecontainersearch {
@@ -56,6 +73,7 @@ margin: 1rem;
     flex-flow: row wrap;
     height: auto;
     background-color: black;
+    justify-content: center;
    
 }
 

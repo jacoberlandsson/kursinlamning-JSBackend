@@ -29,29 +29,45 @@ function MovieClicked({ recently, setRecently }) {
 
   return (
     <>
+      <h2 className="clicked-title">{movieInfo.title}</h2>
+      <Link to={"/"} className="title">
+        <button type="button" className="redirect">
+          Back to Movies
+        </button>
+      </Link>
       <div className="movieclicked">
-        <h2 className="clicked-title">{movieInfo.title}</h2>
-        <Link to={"/"} className="title">
-          <button type="button" className="redirect">
-            Back to Movies
-          </button>
-        </Link>
-
-        <div className="moviedescription">
-          <img
-            className="movieimageclicked"
-            src={
-              "https://www.themoviedb.org/t/p/w440_and_h660_face" +
-              movieInfo.backdrop_path
-            }
-            alt={movieInfo.title}
-          />
-          <div className="description">
-            <p>{movieInfo.overview}</p>
-            <p>Release date: {movieInfo.release_date}</p>
-            <p>Popularity: {movieInfo.popularity}</p>
+        <article className="moviedescription">
+          <div className="imagediv">
+            <img
+              className="movieimageclicked"
+              src={
+                "https://www.themoviedb.org/t/p/w440_and_h660_face" +
+                movieInfo.backdrop_path
+              }
+              alt={movieInfo.title}
+            />
           </div>
-        </div>
+          <div className="description">
+            <p className="p">
+              <b>Overview:</b> {movieInfo.overview}
+            </p>
+            <p className="p">
+              {" "}
+              <b>Release Date:</b> {movieInfo.release_date}
+            </p>
+            <p className="p">
+              <b>Popularity:</b> {movieInfo.popularity}
+            </p>
+            <p className="p">
+              {" "}
+              <b>Vote Average:</b> {movieInfo.vote_average}
+            </p>
+            <p className="p">
+              {" "}
+              <b>Number of Votes:</b> {movieInfo.vote_count}
+            </p>
+          </div>
+        </article>
       </div>
 
       <div>
